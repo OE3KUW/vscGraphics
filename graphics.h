@@ -1,7 +1,7 @@
 #ifndef VSC_GRAPHICS_H
 #define VSC_GRAPHICS_H
 
-/* Eine kleine, Linux/X11-basierte BGI-aehnliche Grafikbibliothek. */
+/* Eine kleine BGI-aehnliche Grafikbibliothek fuer Linux/X11 und Windows. */
 
 #define DETECT 0
 #define VGA 9
@@ -77,8 +77,8 @@ enum GraphicsTextFont
     GOTHIC_FONT
 };
 
-/* Klassischer Start: Der VGA-Modus bestimmt die Anfangsgroesse; unter X11
-   wird das Fenster anschliessend ueber EWMH maximiert. */
+/* Klassischer Start: Der VGA-Modus bestimmt die Anfangsgroesse. Unter X11
+   wird ueber EWMH, unter Windows ueber Win32 maximiert. */
 void initgraph(int *graphdriver, int *graphmode, const char *pathtodriver);
 
 /* Praktische Erweiterung fuer eine frei waehlbare Fenstergroesse. */
