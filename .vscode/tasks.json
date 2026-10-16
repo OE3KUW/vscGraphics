@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "vscGraphics bauen",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-std=gnu17",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "${workspaceFolder}/main.c",
+                "${workspaceFolder}/graphics.c",
+                "-lX11",
+                "-lm",
+                "-o",
+                "${workspaceFolder}/build/vscGraphics.exe"
+            ],
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "vscGraphics ausfuehren",
+            "type": "process",
+            "command": "${workspaceFolder}/build/vscGraphics.exe",
+            "args": [],
+            "dependsOrder": "sequence",
+            "dependsOn": "vscGraphics bauen",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never",
+                "panel": "dedicated",
+                "close": true
+            }
+        },
+        {
+            "label": "vscConsole ausfuehren",
+            "detail": "F5-Kompatibilitaet: startet in diesem Projekt vscGraphics",
+            "type": "process",
+            "command": "${workspaceFolder}/build/vscGraphics.exe",
+            "args": [],
+            "dependsOrder": "sequence",
+            "dependsOn": "vscGraphics bauen",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never",
+                "panel": "dedicated",
+                "close": true
+            }
+        }
+    ]
+}

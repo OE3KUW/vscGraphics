@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "C_Cpp.default.cStandard": "gnu17",
+        "files.associations": {
+            "graphics.h": "c"
+        }
+    }
+}
